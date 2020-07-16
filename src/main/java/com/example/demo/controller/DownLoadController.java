@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
 
 @Controller
-@RequestMapping("/fileDown")
+@RequestMapping("/fileDownload")
 public class DownLoadController {
 
     @Autowired

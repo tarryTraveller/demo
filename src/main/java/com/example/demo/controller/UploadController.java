@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.FileManageService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class UploadController {
     @PostMapping("/upload")
     @ResponseBody
     public String fileUpload(@RequestParam("file") MultipartFile file){
-        if (Objects.isNull(file)){
+        if (Objects.isNull(file)==true?true:StringUtils.isBlank(file.getOriginalFilename())){
             return "文件上传失败，请重新选择文件";
         }
         return fileManageService.upload(file);

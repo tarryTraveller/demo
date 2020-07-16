@@ -74,6 +74,6 @@ public class FileManageService {
                 LOGGER.error(e.getMessage(), e);
             }
         }
-        return "success";
+        return "文件下载成功";
     }
 }
